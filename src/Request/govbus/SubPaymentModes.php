@@ -3,40 +3,43 @@
  * User:  DavidCao626
  * Email: DavidCao626@gmail.com
  * Date: 2018/10/1
- * Time: 19:37
+ * Time: 19:37.
  */
 
 namespace DavidCao626\SuningSdk\Request\Govbus;
 
-
-class SubPaymentModes {
-
+class SubPaymentModes
+{
     private $apiParams = array();
 
     private $payAmount;
 
     private $payCode;
 
-    public function getPayAmount() {
+    public function getPayAmount()
+    {
         return $this->payAmount;
     }
 
-    public function setPayAmount($payAmount) {
+    public function setPayAmount($payAmount)
+    {
         $this->payAmount = $payAmount;
-        $this->apiParams["payAmount"] = $payAmount;
+        $this->apiParams['payAmount'] = $payAmount;
     }
 
-    public function getPayCode() {
+    public function getPayCode()
+    {
         return $this->payCode;
     }
 
-    public function setPayCode($payCode) {
+    public function setPayCode($payCode)
+    {
         $this->payCode = $payCode;
-        $this->apiParams["payCode"] = $payCode;
+        $this->apiParams['payCode'] = $payCode;
     }
 
-    public function getApiParams(){
+    public function getApiParams()
+    {
         return $this->apiParams;
     }
-
 }

@@ -1,16 +1,17 @@
 <?php
 /**
- * 苏宁开放平台接口 - 上传业务类
+ * 苏宁开放平台接口 - 上传业务类.
  *
  * @author jerry(14033184@cnsuning.com)
  * @date   2014-05-29
  */
 
 namespace DavidCao626\SuningSdk\Util;
+
 class SuningUploadRequest
 {
     /**
-     * 获取图片的二进制流并base64
+     * 获取图片的二进制流并base64.
      *
      * $param  string $filaName 表单名称(input type=file的name值)
      * $return string
@@ -25,12 +26,11 @@ class SuningUploadRequest
             array(
                 'http' => array(
                     'timeout' => 2, // 设置超时
-                )
+                ),
             )
         );
         $file = file_get_contents($_FILES[$fileName]['tmp_name'], false, $ctx);
+
         return base64_encode($file);
     }
 }
-
-?>
