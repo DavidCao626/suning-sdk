@@ -5,7 +5,7 @@ namespace DavidCao626\SuningSdk;
 use DavidCao626\SuningSdk\Util\RequestCheckUtil;
 
 /**
- * 苏宁开放平台接口 - 查询业务类基类
+ * 苏宁开放平台接口 - 查询业务类基类.
  *
  * @author jerry(14033184@cnsuning.com)
  * @date   2014-05-28
@@ -13,18 +13,19 @@ use DavidCao626\SuningSdk\Util\RequestCheckUtil;
 class SelectSuningRequest
 {
     protected $apiParams = array();
+
     /**
-     * 页码。取值范围:大于零的整数;默认值为1，即返回第一页数据
+     * 页码。取值范围:大于零的整数;默认值为1，即返回第一页数据.
      */
     protected $pageNo;
 
     /**
-     * 每页条数。取值范围:大于零的整数;最大值：50。默认值：10
+     * 每页条数。取值范围:大于零的整数;最大值：50。默认值：10.
      */
     protected $pageSize;
 
     /**
-     * 是否参数校验(默认false,测试及生产建议为true)
+     * 是否参数校验(默认false,测试及生产建议为true).
      */
     protected $checkParam = false;
 
@@ -41,7 +42,7 @@ class SelectSuningRequest
     public function setPageNo($pageNo)
     {
         $this->pageNo = $pageNo;
-        $this->apiParams["pageNo"] = $pageNo;
+        $this->apiParams['pageNo'] = $pageNo;
     }
 
     public function getPageNo()
@@ -52,7 +53,7 @@ class SelectSuningRequest
     public function setPageSize($pageSize)
     {
         $this->pageSize = $pageSize;
-        $this->apiParams["pageSize"] = $pageSize;
+        $this->apiParams['pageSize'] = $pageSize;
     }
 
     public function getPageSize()
@@ -80,5 +81,3 @@ class SelectSuningRequest
         RequestCheckUtil::checkMaxValue($this->pageSize, $pageSizeMax, 'pageSize');
     }
 }
-
-?>

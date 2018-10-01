@@ -3,49 +3,56 @@
  * User:  DavidCao626
  * Email: DavidCao626@gmail.com
  * Date: 2018/10/1
- * Time: 19:39
+ * Time: 19:39.
  */
 
 namespace DavidCao626\SuningSdk\Request\Govbus;
 
-
-class Skus {
-
+class Skus
+{
     private $apiParams = array();
 
     private $num;
+
     private $price;
+
     private $skuId;
 
-    public function getPrice() {
+    public function getPrice()
+    {
         return $this->price;
     }
 
-    public function setPrice($price) {
+    public function setPrice($price)
+    {
         $this->price = $price;
-        $this->apiParams["price"] = $price;
+        $this->apiParams['price'] = $price;
     }
 
-    public function getNum() {
+    public function getNum()
+    {
         return $this->num;
     }
 
-    public function setNum($num) {
+    public function setNum($num)
+    {
         $this->num = $num;
-        $this->apiParams["num"] = $num;
+        $this->apiParams['num'] = $num;
     }
 
-    public function getSkuId() {
+    public function getSkuId()
+    {
         return $this->skuId;
     }
 
-    public function setSkuId($skuId) {
+    public function setSkuId($skuId)
+    {
         $this->skuId = $skuId;
-        $this->apiParams["skuId"] = $skuId;
+        $this->apiParams['skuId'] = $skuId;
     }
 
-    public function getApiParams(){
+    public function getApiParams()
+    {
         return $this->apiParams;
     }
-
 }

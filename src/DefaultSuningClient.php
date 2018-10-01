@@ -3,7 +3,7 @@
  * User:  DavidCao626
  * Email: DavidCao626@gmail.com
  * Date: 2018/10/1
- * Time: 13:31
+ * Time: 13:31.
  */
 
 declare(strict_types=1);
@@ -16,8 +16,6 @@ use DavidCao626\SuningSdk\Util\ArrayToXML;
 
 class DefaultSuningClient
 {
-
-
     /**
      * 应用访问key.
      */
@@ -27,10 +25,12 @@ class DefaultSuningClient
      * 应用访问密钥.
      */
     private $appSecret;
+
     /**
      * 服务器访问地址
      */
     private $serverUrl;
+
     /**
      * 请求、响应格式.
      */
@@ -52,14 +52,13 @@ class DefaultSuningClient
 
     private static $accessToken = '';
 
-
     /**
      * 构造方法.
      *
      * @param string $serverUrl 服务调用地址
-     * @param string $appKey 应用访问key
+     * @param string $appKey    应用访问key
      * @param string $appSecret appKey对应密钥
-     * @param string $format 请求、响应格式(xml、json)
+     * @param string $format    请求、响应格式(xml、json)
      */
     public function __construct(string $serverUrl = null, string $appKey = null, string $appSecret = null, string $format = null)
     {
@@ -90,18 +89,18 @@ class DefaultSuningClient
         // 组装头文件信息
         $signDataHeader = array(
             'Content-Type: text/xml; charset=utf-8',
-            'AppMethod: ' . $params['method'],
-            'AppRequestTime: ' . $params['date'],
-            'Format: ' . $this->format,
-            'signInfo: ' . $signString,
-            'AppKey: ' . $params['app_key'],
-            'VersionNo: ' . $params['api_version'],
-            'User-Agent: ' . self::$userAgent,
-            'Sdk-Version: ' . self::$sdkVersion,
+            'AppMethod: '.$params['method'],
+            'AppRequestTime: '.$params['date'],
+            'Format: '.$this->format,
+            'signInfo: '.$signString,
+            'AppKey: '.$params['app_key'],
+            'VersionNo: '.$params['api_version'],
+            'User-Agent: '.self::$userAgent,
+            'Sdk-Version: '.self::$sdkVersion,
         );
 
         if (!empty(self::$accessToken)) {
-            $signDataHeader[] = 'access_token:' . self::$accessToken;
+            $signDataHeader[] = 'access_token:'.self::$accessToken;
         }
 
         return $signDataHeader;
@@ -138,10 +137,9 @@ class DefaultSuningClient
             try {
                 $request->check();
             } catch (\Exception $e) {
-                throw new InvalidArgumentException('Invalid format:' . $checkParam);
+                throw new InvalidArgumentException('Invalid format:'.$checkParam);
             }
         }
-
 
         // 获取业务参数
         $paramsArray = $request->getApiParams();
@@ -151,7 +149,7 @@ class DefaultSuningClient
         $paramsArray = array('sn_request' => array('sn_body' => array(
             "{$request->getBizName()}" => $paramsArray,
         )));
-        if ($this->format == 'json') {
+        if ('json' == $this->format) {
             $apiParams = json_encode($paramsArray);
         } else {
             $apiParams = ArrayToXML::parse($paramsArray['sn_request'],
@@ -171,19 +169,20 @@ class DefaultSuningClient
         unset($sysParams);
         // 发起HTTP请求
         try {
-            $resp = self::curl($this->serverUrl . '/' . $request->getApiMethodName(), $apiParams, $signHeader);
+            $resp = self::curl($this->serverUrl.'/'.$request->getApiMethodName(), $apiParams, $signHeader);
         } catch (\Exception  $e) {
             throw new HttpException($e->getMessage(), $e->getCode(), $e);
         }
+
         return $resp;
     }
 
     /**
      * 发送请求
      *
-     * @param string $url
+     * @param string   $url
      * @param json|xml $postFields
-     * $param array $header
+     *                             $param array $header
      *
      * @return json xml
      */
@@ -202,7 +201,7 @@ class DefaultSuningClient
         curl_setopt($ch, CURLOPT_POSTFIELDS, $postFields);
 
         // https 请求
-        if (strlen($url) > 5 && strtolower(substr($url, 0, 5)) == 'https') {
+        if (strlen($url) > 5 && 'https' == strtolower(substr($url, 0, 5))) {
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
             curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
         }
@@ -214,7 +213,7 @@ class DefaultSuningClient
         } else {
             $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
             if (200 !== $httpStatusCode) {
-                throw new HttpException('Suning API Network Error！httpStatusCode' . $response, $httpStatusCode);
+                throw new HttpException('Suning API Network Error！httpStatusCode'.$response, $httpStatusCode);
             }
         }
         curl_close($ch);
@@ -222,18 +221,16 @@ class DefaultSuningClient
         return $response;
     }
 
-
     /**
      * OAuth授权必须设置.
      *
      * @param mixed $accessToken
-     *  $return void
+     *                           $return void
      */
     public static function setAccessToken($accessToken)
     {
         self::$accessToken = $accessToken;
     }
-
 
     /**
      * @return string
@@ -266,6 +263,4 @@ class DefaultSuningClient
     {
         return $this->serverUrl;
     }
-
-
 }

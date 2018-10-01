@@ -3,16 +3,13 @@
  * User:  DavidCao626
  * Email: DavidCao626@gmail.com
  * Date: 2018/10/1
- * Time: 19:38
+ * Time: 19:38.
  */
 
 namespace DavidCao626\SuningSdk\Request\Govbus;
 
-
-
-
-class SpecialVatTicket {
-
+class SpecialVatTicket
+{
     private $apiParams = array();
 
     private $companyName;
@@ -33,89 +30,107 @@ class SpecialVatTicket {
 
     private $taxNo;
 
-    public function getCompanyName() {
+    public function getCompanyName()
+    {
         return $this->companyName;
     }
 
-    public function setCompanyName($companyName) {
+    public function setCompanyName($companyName)
+    {
         $this->companyName = $companyName;
-        $this->apiParams["companyName"] = $companyName;
+        $this->apiParams['companyName'] = $companyName;
     }
 
-    public function getConsigneeAddress() {
+    public function getConsigneeAddress()
+    {
         return $this->consigneeAddress;
     }
 
-    public function setConsigneeAddress($consigneeAddress) {
+    public function setConsigneeAddress($consigneeAddress)
+    {
         $this->consigneeAddress = $consigneeAddress;
-        $this->apiParams["consigneeAddress"] = $consigneeAddress;
+        $this->apiParams['consigneeAddress'] = $consigneeAddress;
     }
 
-    public function getConsigneeMobileNum() {
+    public function getConsigneeMobileNum()
+    {
         return $this->consigneeMobileNum;
     }
 
-    public function setConsigneeMobileNum($consigneeMobileNum) {
+    public function setConsigneeMobileNum($consigneeMobileNum)
+    {
         $this->consigneeMobileNum = $consigneeMobileNum;
-        $this->apiParams["consigneeMobileNum"] = $consigneeMobileNum;
+        $this->apiParams['consigneeMobileNum'] = $consigneeMobileNum;
     }
 
-    public function getConsigneeName() {
+    public function getConsigneeName()
+    {
         return $this->consigneeName;
     }
 
-    public function setConsigneeName($consigneeName) {
+    public function setConsigneeName($consigneeName)
+    {
         $this->consigneeName = $consigneeName;
-        $this->apiParams["consigneeName"] = $consigneeName;
+        $this->apiParams['consigneeName'] = $consigneeName;
     }
 
-    public function getRegAccount() {
+    public function getRegAccount()
+    {
         return $this->regAccount;
     }
 
-    public function setRegAccount($regAccount) {
+    public function setRegAccount($regAccount)
+    {
         $this->regAccount = $regAccount;
-        $this->apiParams["regAccount"] = $regAccount;
+        $this->apiParams['regAccount'] = $regAccount;
     }
 
-    public function getRegAdd() {
+    public function getRegAdd()
+    {
         return $this->regAdd;
     }
 
-    public function setRegAdd($regAdd) {
+    public function setRegAdd($regAdd)
+    {
         $this->regAdd = $regAdd;
-        $this->apiParams["regAdd"] = $regAdd;
+        $this->apiParams['regAdd'] = $regAdd;
     }
 
-    public function getRegBank() {
+    public function getRegBank()
+    {
         return $this->regBank;
     }
 
-    public function setRegBank($regBank) {
+    public function setRegBank($regBank)
+    {
         $this->regBank = $regBank;
-        $this->apiParams["regBank"] = $regBank;
+        $this->apiParams['regBank'] = $regBank;
     }
 
-    public function getRegTel() {
+    public function getRegTel()
+    {
         return $this->regTel;
     }
 
-    public function setRegTel($regTel) {
+    public function setRegTel($regTel)
+    {
         $this->regTel = $regTel;
-        $this->apiParams["regTel"] = $regTel;
+        $this->apiParams['regTel'] = $regTel;
     }
 
-    public function getTaxNo() {
+    public function getTaxNo()
+    {
         return $this->taxNo;
     }
 
-    public function setTaxNo($taxNo) {
+    public function setTaxNo($taxNo)
+    {
         $this->taxNo = $taxNo;
-        $this->apiParams["taxNo"] = $taxNo;
+        $this->apiParams['taxNo'] = $taxNo;
     }
 
-    public function getApiParams(){
+    public function getApiParams()
+    {
         return $this->apiParams;
     }
-
 }
