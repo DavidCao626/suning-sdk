@@ -1,0 +1,14 @@
+
+
+Code Coverage Report:      
+  2018-10-01 22:08:24      
+                           
+ Summary:                  
+  Classes:  0.00% (0/62)   
+  Methods:  1.41% (8/569)  
+  Lines:    4.47% (76/1699)
+
+\DavidCao626\SuningSdk::DavidCao626\SuningSdk\DefaultSuningClient
+  Methods:  55.56% ( 5/ 9)   Lines:  79.07% ( 68/ 86)
+\DavidCao626\SuningSdk::DavidCao626\SuningSdk\SuningRequest
+  Methods:  60.00% ( 3/ 5)   Lines:  80.00% (  8/ 10)

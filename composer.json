@@ -1,0 +1,34 @@
+{
+  "name": "davidcao626\/suning-sdk",
+  "description": "suning sdk for composer package",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "DavidCao626",
+      "email": "DavidCao626@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "DavidCao626\\SuningSdk\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "DavidCao626\\SuningSdk\\Tests\\": "tests"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6.5"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "DavidCao626\\SuningSdk\\ServiceProvider"
+      ]
+    }
+  }
+}
