@@ -1,7 +1,7 @@
 <h1 align="center"> suning-sdk</h1>
 
 <p align="center"> 基于苏宁开放平台SDK（PHP）封装的 Composer Package 组件包.</p>
-
+![StyleCI build status](https://github.styleci.io/repos/151113500/shield) 
 ## 安装：
 
 ```shell
