@@ -38,8 +38,8 @@ print_r("请求报文:\n" . $reqJson);
 print_r("\n返回响应报文:\n" . $resp);
 
 ```
-####laravel 框架中使用：
->laravel >=5.5 自动注册
+###laravel 框架中使用
+
 
 >laravel 5.5以下安排完毕后需要自行配置ServiceProvider：
 
@@ -51,6 +51,7 @@ print_r("\n返回响应报文:\n" . $resp);
         DavidCao626\SuningSdk\ServiceProvider::class
     ],
 ```
+>laravel >=5.5 自动注册
 
 
 <p>1.安装完毕后，config/services.php添加appkey等相关配置</p>
@@ -99,7 +100,8 @@ class CategoryGet extends Controller
 }
 ```
 >如上，可以用两种方式来获取 DavidCao626\SunningSdk\DefaultSuningClient 实例：
-#####方法注入
+
+###方法注入
 ```php
     public function show(DefaultSuningClient $defaultSuningClient) 
     {
@@ -107,7 +109,7 @@ class CategoryGet extends Controller
         $response = $defaultSuningClient->execute('$req');
     }
 ```
-#####服务名访问
+###服务名访问
 ```php
     public function show() 
     {
@@ -115,6 +117,9 @@ class CategoryGet extends Controller
         $response =app('suningSdk')->execute($req);
     }
 ```
+
+
+
 ### 相关链接
 [苏宁开放平台-SDK下载介绍](http://openpre.cnsuning.com/ospos/apipage/toDocContent.do?menuId=28) 
 
