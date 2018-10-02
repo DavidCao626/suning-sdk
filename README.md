@@ -27,8 +27,8 @@ $req = new CategoryGetRequest();
 $req->setCheckParam('true');
 $assertArray = [
     'serverUrl' => 'http://openpre.cnsuning.com/api/http/sopRequest',
-    'appKey' => 'b49970b52c88dee1d7c1743da32cedd2',
-    'appSecret' => '2ae2da81c64ae149c2aeb99a535508b0',
+    'appKey' => 'xxxxxxxxxxxxxxxxxxxxxxxx',
+    'appSecret' => 'xxxxxxxxxxxxxxxxxxxxxxxx',
     'format' => 'json'
 ];
 $client = new DefaultSuningClient($assertArray['serverUrl'], $assertArray['appKey'],
@@ -40,7 +40,7 @@ print_r("请求报文:\n" . $reqJson);
 print_r("\n返回响应报文:\n" . $resp);
 
 ```
-###laravel 框架中使用
+##laravel 框架中使用
 
 
 >laravel 5.5以下安排完毕后需要自行配置ServiceProvider：
@@ -103,7 +103,8 @@ class CategoryGet extends Controller
 ```
 >如上，可以用两种方式来获取 DavidCao626\SunningSdk\DefaultSuningClient 实例：
 
-###方法注入
+##方法注入
+
 ```php
     public function show(DefaultSuningClient $defaultSuningClient) 
     {
@@ -111,7 +112,8 @@ class CategoryGet extends Controller
         $response = $defaultSuningClient->execute('$req');
     }
 ```
-###服务名访问
+##服务名访问
+
 ```php
     public function show() 
     {
@@ -122,7 +124,7 @@ class CategoryGet extends Controller
 
 
 
-### 相关链接
+## 相关链接
 [苏宁开放平台-SDK下载介绍](http://openpre.cnsuning.com/ospos/apipage/toDocContent.do?menuId=28) 
 
 ## Contributing

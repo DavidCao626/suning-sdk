@@ -20,8 +20,8 @@ class SuningSdkTest extends TestCase
         $req->setCheckParam('true');
         $assertArray = [
             'serverUrl' => 'http://openpre.cnsuning.com/api/http/sopRequest',
-            'appKey' => 'b49970b52c88dee1d7c1743da32cedd2',
-            'appSecret' => '2ae2da81c64ae149c2aeb99a535508b0',
+            'appKey' => 'xxxxxxxxxxxxxxxxxxxxxxxx',
+            'appSecret' => 'xxxxxxxxxxxxxxxxxxxxxxxx',
             'format' => 'json',
         ];
         $client = new DefaultSuningClient($assertArray['serverUrl'], $assertArray['appKey'],
@@ -38,8 +38,8 @@ class SuningSdkTest extends TestCase
     {
         $assertArray = [
             'serverUrl' => 'http://openpre.cnsuning.com/api/http/sopRequest',
-            'appKey' => 'b49970b52c88dee1d7c1743da32cedd2',
-            'appSecret' => '2ae2da81c64ae149c2aeb99a535508b0',
+            'appKey' => 'xxxxxxxxxxxxxxxxxxxxxxxx',
+            'appSecret' => 'xxxxxxxxxxxxxxxxxxxxxxxx',
             'format' => 'json',
         ];
         $client = new DefaultSuningClient($assertArray['serverUrl'], $assertArray['appKey'],
